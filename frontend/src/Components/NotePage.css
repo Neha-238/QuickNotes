@@ -1,0 +1,55 @@
+.note-page-wrapper {
+  padding: 3rem;
+  max-width: 900px;
+  margin: auto;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  font-family: "Segoe UI", sans-serif;
+  margin-top: 4rem;
+}
+
+.note-page-wrapper h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #4a148c;
+}
+
+.note-page-wrapper textarea {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  border: 2px solid #d1c4e9;
+  border-radius: 12px;
+  resize: vertical;
+  outline: none;
+}
+
+.note-page-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.note-page-buttons button {
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  background-color: #4a148c;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.note-page-buttons button:hover {
+  background-color: #6a1b9a;
+}
+
+.note-page-buttons button:nth-child(2) {
+  background-color: #4a148c;
+  color: white;
+}
+

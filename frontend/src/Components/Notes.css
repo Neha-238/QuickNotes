@@ -1,0 +1,250 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.notes-wrapper {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(135deg, #e0c3fc, #8ec5fc);
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background-color: white;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 4px 0 12px rgba(74, 20, 140, 0.2);
+  z-index: 1;
+}
+
+.sidebar h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #4a148c;
+}
+
+.category-list {
+  list-style: none;
+  padding-left: 0;
+  flex-grow: 1;
+}
+
+.category-list li {
+  margin-bottom: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background-color: #f3e5f5;
+  color: #4a148c;
+  transition: background 0.3s;
+}
+
+.category-list li:hover {
+  background-color: #e1bee7;
+}
+
+.category-list li::before {
+  content: "📁";
+  margin-right: 0.5rem;
+}
+
+/* Add Folder section */
+.add-folder {
+  margin-top: 2rem;
+}
+
+.add-folder input {
+  width: 100%;
+  padding: 10px;
+  border: 1.5px solid #d1c4e9;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.add-folder button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4a148c;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.add-folder button:hover {
+  background-color: #6a1b9a;
+}
+
+/* Main content */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* align to top instead of center */
+  padding-top: 4rem; /* spacing from top */
+  padding-inline: 2rem;
+  gap: 2rem; /* space between title and card */
+  min-height: 100vh;
+}
+
+
+.quicknotes-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #4a148c;
+  margin-bottom: 3rem;
+}
+
+.logout-button {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  background-color: #4a148c;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #6a1b9a;
+}
+
+/* Add Note Card */
+.add-note-card {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  margin: auto; /* ensure proper centering fallback */
+}
+.add-note-card h3 {
+  color: #4a148c;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.add-note-card form {
+  display: flex;
+  gap: 1rem;
+}
+
+.add-note-card input {
+  flex: 1;
+  padding: 12px;
+  font-size: 1rem;
+  border: 2px solid #d1c4e9;
+  border-radius: 12px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.add-note-card input:focus {
+  border-color: #4a148c;
+}
+
+.add-note-card button {
+  padding: 12px 18px;
+  background-color: #4a148c;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-note-card button:hover {
+  background-color: #6a1b9a;
+}
+
+/* Folder Action Icons */
+.folder-actions {
+  float: right;
+  display: flex;
+  gap: 6px;
+}
+
+.folder-actions button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 2px 4px;
+  color: #6a1b9a;
+  transition: transform 0.2s;
+}
+
+.folder-actions button:hover {
+  transform: scale(1.2);
+}
+
+/* Notes under 'No Folder' */
+.note-list {
+  margin-top: 1.5rem;
+  text-align: left;
+}
+
+.note-title {
+  background-color: #f3e5f5;
+  padding: 10px;
+  margin: 6px 0;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #4a148c;
+  transition: background 0.3s;
+}
+
+.note-title:hover {
+  background-color: #e1bee7;
+}
+
+.no-notes {
+  color: #888;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.note-timestamp {
+  font-size: 0.75rem;
+  color: #888;
+  margin-right: 8px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.search-input {
+  margin: 10px 0;
+  padding: 8px;
+  width: 100%;
+  max-width: 400px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
