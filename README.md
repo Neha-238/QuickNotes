@@ -24,6 +24,11 @@ It supports folder-based organization, real-time search, PDF export, and JWT-bas
 - **Authentication:** JSON Web Token (JWT)
 - **PDF Generation:** `pdfkit`, `jsPDF`
 
+- ## 📸 Screenshots
+
+📁 [View All Screenshots](https://github.com/Neha-238/QuickNotes/tree/main/screenshots)
+
+
 ---
 
 ## 🧑‍💻 Getting Started
