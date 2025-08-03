@@ -14,10 +14,6 @@ const NoteSchema = new mongoose.Schema({
     type: String,
     default: "",
   },
-  pinned: {
-    type: Boolean,
-    default: false,
-  },
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",

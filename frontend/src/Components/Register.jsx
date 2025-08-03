@@ -16,7 +16,7 @@ export default function Register() {
         password,
       });
       alert("Registration successful! Please login.");
-      navigate("/");
+      navigate("/"); //after successfull registration user is taken to login page
     } catch (err) {
       alert(err.response.data.message || "Registration failed");
     }

@@ -7,8 +7,9 @@ const router = express.Router();
 // Fetch notes
 router.get("/", verifyToken, async (req, res) => {
   try {
+    // Finds all notes that belong to the logged-in user
+    // Sorts them by creation date (newest first)
     const notes = await Note.find({ user: req.user.id }).sort({
-      pinned: -1,
       createdAt: -1,
     });
     res.json(notes);
@@ -39,18 +40,6 @@ router.put("/:id", verifyToken, async (req, res) => {
     res.json(updated);
   } catch (err) {
     res.status(500).json({ message: "Error updating note" });
-  }
-});
-
-// Toggle pin
-router.patch("/:id/pin", verifyToken, async (req, res) => {
-  try {
-    const note = await Note.findById(req.params.id);
-    note.pinned = !note.pinned;
-    await note.save();
-    res.json(note);
-  } catch (err) {
-    res.status(500).json({ message: "Error pinning note" });
   }
 });
 
